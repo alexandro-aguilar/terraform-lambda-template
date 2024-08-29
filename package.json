@@ -1,0 +1,19 @@
+{
+  "name": "terraform-lambda-template",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/alexandro-aguilar/terraform-lambda-template.git",
+  "license": "MIT",
+  "scripts": {
+    "build": "node esbuild.js",
+    "dev": "node esbuild.js --watch",
+    "deploy": "yarn biuld && terraform -chdir=infrastructure apply"
+  },
+  "dependencies": {
+    "@types/aws-lambda": "^8.10.144"
+  },
+  "devDependencies": {
+    "esbuild": "^0.23.1",
+    "typescript": "^5.5.4"
+  }
+}
