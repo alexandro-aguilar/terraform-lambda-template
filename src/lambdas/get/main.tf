@@ -5,7 +5,7 @@ data "archive_file" "lambda_zip" {
 }
 
 resource "aws_lambda_function" "lambda" {
-  filename         = data.archive_file.lambda_zip.output_path
+  filename          = data.archive_file.lambda_zip.output_path
   function_name    = var.function_name
   role             = aws_iam_role.lambda_exec.arn
   handler          = "index.handler"
